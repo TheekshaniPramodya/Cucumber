@@ -38,7 +38,7 @@ public class LoginSteps {
                 Thread.sleep(5000); // Hard wait for the portal's slow redirect
             }
 
-            // Handle the popup if it blocks navigation
+            // Handle the popup if it blocks the navigation
             WebElement closeBtn = driver.findElement(By.cssSelector("i.fa-times-circle"));
             closeBtn.click();
         } catch (Exception e) {
