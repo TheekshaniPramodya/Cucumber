@@ -31,8 +31,8 @@ public class LoginSteps {
     public void i_enter_username_and_password() {
         try {
             // Check if already logged in to save time
-            if (driver.findElements(By.xpath("//input[@type='text']")).size() > 0) {
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='text']"))).sendKeys("usnm");
+            if (!driver.findElements(By.xpath("//input[@type='text']")).isEmpty()) {
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='text']"))).sendKeys("usrnm");
                 driver.findElement(By.xpath("//input[@type='password']")).sendKeys("pswd");
                 driver.findElement(By.xpath("//button[contains(.,'Sign In')]")).click();
                 Thread.sleep(5000); // Hard wait for the portal's slow redirect
